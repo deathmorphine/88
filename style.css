@@ -1,0 +1,52 @@
+
+/* Форма реєстрації — лабораторна робота №1 */
+
+.registration-form {
+    max-width: 550px;
+    margin: 25px auto;
+    padding: 30px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+}
+
+.registration-form label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.registration-form input:not([type="submit"]),
+.registration-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 16px;
+    background: white;
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
+    outline: 2px solid #3b82f6;
+    border-color: #2563eb;
+}
+
+.registration-form input[type="submit"] {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background: #2563eb;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.registration-form input[type="submit"]:hover {
+    background: #1d4ed8;
+}
