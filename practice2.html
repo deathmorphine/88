@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Практична робота №2 — Основи CSS. Стилізація форми реєстрації.">
+    <title>Практична робота №2 — Основи CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Практична робота №2</h1>
+        <p>Тема: Основи CSS</p>
+        <p>Виконав: Павлов Іван</p>
+    </header>
+
+    <nav aria-label="Головна навігація">
+        <a href="index.html">Головна</a>
+        <a href="lab1.html">Лабораторна №1</a>
+        <a href="practice2.html" aria-current="page">Практична №2</a>
+        <a href="practices.html">Перелік робіт</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Мета роботи</h2>
+            <p>Навчитися використовувати каскадні таблиці стилів (CSS) для оформлення HTML-сторінок, зокрема форми реєстрації з лабораторної роботи №1.</p>
+            <p>У цій роботі застосовано кольори фону та тексту, ширину, внутрішні відступи, закруглені кути, тіні, позиціювання й плавні переходи.</p>
+        </section>
+
+        <section>
+            <h2>Форма реєстрації зі стилізацією CSS</h2>
+            <p>Нижче — оформлена форма з лабораторної №1. Поля позначені зірочкою (*) — обов'язкові.</p>
+            <p><strong>Увага:</strong> для перевірки надсилання використовуйте лише вигадані дані та тестовий пароль. Форма надсилає дані до навчального сервісу Webhook.site.</p>
+
+            <form class="registration-form"
+      action="https://webhook.site/aa9c3389-f1fa-4dfe-8501-5acec12805a3"
+      method="POST">
+
+
+            <label for="first-name">Ім'я *</label>
+            <input
+                type="text"
+                id="first-name"
+                name="first_name"
+                placeholder="Введіть ваше ім'я"
+                required
+            >
+
+            <label for="last-name">Прізвище *</label>
+            <input
+                type="text"
+                id="last-name"
+                name="last_name"
+                placeholder="Введіть ваше прізвище"
+                required
+            >
+
+            <label for="email">Електронна пошта *</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@gmail.com"
+                required
+            >
+
+            <label for="password">Пароль *</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Введіть пароль"
+                required
+            >
+
+            <label for="confirm-password">
+                Підтвердження пароля *
+            </label>
+            <input
+                type="password"
+                id="confirm-password"
+                name="confirm_password"
+                placeholder="Повторіть пароль"
+                required
+            >
+
+            <label for="birth-date">Дата народження</label>
+            <input
+                type="date"
+                id="birth-date"
+                name="birth_date"
+            >
+
+            <label for="gender">Стать</label>
+            <select id="gender" name="gender">
+                <option value="">Оберіть варіант</option>
+                <option value="male">Чоловіча</option>
+                <option value="female">Жіноча</option>
+                <option value="other">Інше</option>
+                <option value="no_answer">
+                    Не хочу вказувати
+                </option>
+            </select>
+
+            <input type="submit" value="Зареєструватися">
+
+        </form>
+        </section>
+
+        <section>
+            <h2>Використані можливості CSS</h2>
+            <ul>
+                <li><strong>Колір фону й тексту:</strong> background, background-color, color.</li>
+                <li><strong>Ширина та відступи:</strong> width, max-width, padding, margin.</li>
+                <li><strong>Закруглені кути:</strong> border-radius.</li>
+                <li><strong>Рамки й тіні:</strong> border, box-shadow.</li>
+                <li><strong>Позиціювання:</strong> position, top, z-index.</li>
+                <li><strong>Переходи та ефекти:</strong> transition, transform, :hover, :focus.</li>
+                <li><strong>Адаптивність:</strong> медіазапит @media для невеликих екранів.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Висновок</h2>
+            <p>У ході практичної роботи №2 було оформлено форму реєстрації за допомогою зовнішнього CSS-файлу <code>style.css</code>. Додано кольори, відступи, рамки, закруглення, тіні, позиціювання та плавні переходи при взаємодії з елементами.</p>
+            <p>Зміни збережено в репозиторії GitHub.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Павлов Іван</p>
+        <a href="practices.html">Повернутися до переліку робіт</a>
+    </footer>
+</body>
+</html>
