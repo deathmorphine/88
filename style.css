@@ -1,179 +1,269 @@
+/* Практична робота №2 — Основи CSS.
+   Виконав: Павлов Іван.
+   Оформлення лабораторної роботи №1 та всього сайту. */
 
-/* Форма реєстрації — лабораторна робота №1 */
-
-.registration-form {
-    max-width: 550px;
-    margin: 25px auto;
-    padding: 30px;
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 12px;
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --navy: #0f172a;
+    --text: #25324a;
+    --muted: #64748b;
+    --border: #dbe5f3;
+    --surface: #ffffff;
 }
 
-.registration-form label {
-    display: block;
-    margin-top: 18px;
-    margin-bottom: 7px;
-    font-weight: bold;
-    color: #1e3a8a;
+* {
+    box-sizing: border-box;
 }
 
-.registration-form input:not([type="submit"]),
-.registration-form select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 7px;
-    font-size: 16px;
-    background: white;
+html {
+    scroll-behavior: smooth;
 }
 
-.registration-form input:focus,
-.registration-form select:focus {
-    outline: 2px solid #3b82f6;
-    border-color: #2563eb;
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+    color: var(--text);
+    background: linear-gradient(145deg, #edf4ff 0%, #f8fafc 55%, #e7efff 100%);
 }
 
-.registration-form input[type="submit"] {
-    width: 100%;
-    margin-top: 25px;
-    padding: 14px;
-    background: #2563eb;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.registration-form input[type="submit"]:hover {
-    background: #1d4ed8;
-}
-
-
-
-/* =====================================
-   Практична робота №2
-   Тема: Основи CSS
-   Виконав: Павлов Іван
-   ===================================== */
-
-/* Оформлення форми реєстрації */
-
-.registration-form {
-    /* Колір фону та тексту */
-    background-color: #ffffff;
-    color: #1e293b;
-
-    /* Ширина та внутрішні відступи */
-    width: 90%;
-    max-width: 550px;
-    padding: 35px;
-
-    /* Закруглені кути */
-    border-radius: 20px;
-
-    /* Рамка */
-    border: 1px solid #dbeafe;
-
-    /* Тінь */
-    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.15);
-
-    /* Позиціювання */
+/* Заголовок: кольори, відступи, тінь */
+header {
     position: relative;
-    margin: 35px auto;
-    top: 0;
-
-    /* Плавні переходи */
-    transition: box-shadow 0.3s ease,
-                transform 0.3s ease;
+    padding: 52px 24px 46px;
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(125deg, #101b3b 0%, #1e40af 55%, #3b82f6 100%);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
 }
 
-/* Ефект при наведенні на форму */
+header h1 {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -0.6px;
+}
+
+header p {
+    max-width: 800px;
+    margin: 5px auto;
+    color: #dbeafe;
+    font-size: 16px;
+}
+
+/* Навігація: flexbox, позиціювання та hover */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 13px 18px;
+    background: #101b3b;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.18);
+}
+
+nav a {
+    display: inline-block;
+    padding: 9px 16px;
+    border-radius: 9px;
+    color: #f8fafc;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
+main {
+    width: min(100% - 36px, 1050px);
+    margin: 34px auto 52px;
+}
+
+/* Картки розділів: рамка, закруглення та тіні */
+section {
+    margin-bottom: 24px;
+    padding: clamp(22px, 3.5vw, 36px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+    box-shadow: 0 10px 30px rgba(30, 64, 175, 0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+section:hover {
+    box-shadow: 0 16px 36px rgba(30, 64, 175, 0.13);
+}
+
+section h2 {
+    margin: 0 0 19px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #dbeafe;
+    color: #1e40af;
+    font-size: clamp(22px, 2.5vw, 27px);
+}
+
+section p {
+    margin: 12px 0;
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+li {
+    margin: 9px 0;
+}
+
+/* Форма з лабораторної №1:
+   фон, колір, ширина, padding, border, radius, shadow, position */
+.registration-form {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    margin: 30px auto;
+    padding: 36px;
+    border: 1px solid #bfdbfe;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #ffffff, #f8fbff);
+    color: var(--text);
+    box-shadow: 0 14px 38px rgba(37, 99, 235, 0.12);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
 .registration-form:hover {
-    box-shadow: 0 18px 45px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 20px 46px rgba(37, 99, 235, 0.2);
     transform: translateY(-3px);
 }
 
-/* Написи біля полів */
-
 .registration-form label {
     display: block;
+    margin: 17px 0 7px;
+    color: #1e3a8a;
     font-size: 15px;
-    font-weight: 600;
-    color: #1e40af;
-    margin-top: 18px;
-    margin-bottom: 8px;
+    font-weight: 700;
 }
-
-/* Поля введення */
 
 .registration-form input:not([type="submit"]),
 .registration-form select {
     display: block;
     width: 100%;
-    padding: 14px;
-    font-size: 15px;
-    color: #1e293b;
-    background-color: #f8fafc;
+    min-height: 47px;
+    padding: 12px 14px;
     border: 2px solid #cbd5e1;
     border-radius: 10px;
     outline: none;
-    transition: border-color 0.3s ease,
-                box-shadow 0.3s ease;
+    background: #f8fafc;
+    color: #1e293b;
+    font: inherit;
+    font-size: 15px;
+    transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Ефект при натисканні на поле */
-
-.registration-form input:focus,
+.registration-form input:not([type="submit"]):focus,
 .registration-form select:focus {
-    border-color: #2563eb;
+    border-color: var(--primary);
+    background: #ffffff;
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
-
-/* Кнопка реєстрації */
 
 .registration-form input[type="submit"] {
     display: block;
     width: 100%;
-    padding: 15px;
     margin-top: 30px;
-
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    color: white;
-
-    font-size: 17px;
-    font-weight: bold;
-
+    padding: 15px 20px;
     border: none;
     border-radius: 12px;
-
+    background: linear-gradient(115deg, #2563eb, #1e40af);
+    color: #ffffff;
+    font: inherit;
+    font-size: 17px;
+    font-weight: 700;
     cursor: pointer;
-
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
-/* Анімація кнопки */
-
 .registration-form input[type="submit"]:hover {
-    background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    filter: brightness(1.1);
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.35);
 }
 
 .registration-form input[type="submit"]:active {
     transform: scale(0.98);
 }
 
-/* Адаптація для телефонів */
+footer {
+    padding: 30px 20px;
+    background: #101b3b;
+    color: #e2e8f0;
+    text-align: center;
+}
 
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #bfdbfe;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+/* Адаптивність для телефонів */
 @media (max-width: 600px) {
+    header {
+        padding: 35px 16px;
+    }
+
+    nav {
+        position: static;
+        gap: 5px;
+        padding: 12px;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    main {
+        width: calc(100% - 24px);
+        margin-top: 18px;
+    }
+
+    section {
+        border-radius: 14px;
+    }
+
     .registration-form {
-        width: 100%;
         padding: 20px;
         margin: 20px auto;
+        border-radius: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }
